@@ -21,7 +21,6 @@ jobby.jobs.mail = function (options, cb) {
 };
 
 jobby
-  .connect(redisUrl)
-  .start(errorHandler);
+  .connect(redisUrl, errorHandler)
   .push('mail', {to: 'a', from: 'b', body: 'Hello!'});
 ```
